@@ -1,0 +1,54 @@
+swagger: "2.0"
+info:
+  version: "1.0.0"
+  title: "消费者微服务契约"
+  x-java-interface: "com.service.finance.demo.consumer.controller.ConsumerImpl"
+basePath: "/finance/demo/consumer"
+consumes:
+- "application/json"
+produces:
+- "application/json"
+paths:
+  /helloworld:
+    get:
+      operationId: "helloworld"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "name"
+        in: "query"
+        required: false
+        type: "string"
+      responses:
+        200:
+          description: "response of 200"
+          schema:
+            type: "string"
+  /create:
+    post:
+      operationId: "createUser"
+      produces:
+      - "text/plain"
+      parameters:
+      - name: "id"
+        in: "query"
+        required: false
+        type: "string"
+      - name: "name"
+        in: "query"
+        required: false
+        type: "string"
+      - name: "age"
+        in: "query"
+        required: false
+        type: "integer"
+        format: "int32"
+      - name: "password"
+        in: "query"
+        required: false
+        type: "string"
+      responses:
+        200:
+          description: "response of 200"
+          schema:
+            type: "string"
